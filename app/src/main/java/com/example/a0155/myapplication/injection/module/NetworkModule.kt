@@ -1,7 +1,7 @@
 package com.example.a0155.myapplication.injection.module
 
 import com.example.a0155.myapplication.network.PostAPI
-import com.example.a0155.myapplication.utils.BASE_URL
+import com.example.a0155.myapplication.utils.Constant
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
@@ -41,7 +41,7 @@ object NetworkModule{
     @JvmStatic
     internal fun provideRetrofitInterface(): Retrofit{
         return Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(Constant.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
             .build()
